@@ -130,7 +130,7 @@ export function Skills() {
         >
           <h3 className="text-xl font-semibold mb-6">Also Working With</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {["TypeScript", "Next.js", "Docker", "AWS", "Firebase", "Vercel", "Netlify", "REST APIs", "GraphQL", "Jest", "Cypress"].map((tech) => (
+            {["TypeScript", "Next.js", "Docker", "AWS", "Firebase", "Vercel", "Netlify", "REST APIs",].map((tech) => (
               <Badge key={tech} variant="outline" className="px-4 py-2 text-sm hover:bg-primary hover:text-primary-foreground transition-colors">
                 {tech}
               </Badge>

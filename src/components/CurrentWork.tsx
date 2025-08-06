@@ -6,21 +6,21 @@ import { Badge } from "@/components/ui/badge";
 const currentProjects = [
   {
     icon: Smartphone,
-    title: "Real Estate Mobile App",
-    company: "Swap Space",
-    description: "Building a comprehensive real estate mobile application with modern UI/UX and advanced property search features.",
-    technologies: ["React Native", "JavaScript", "NativeWind"],
+    title: "Build-Note AI",
+    company: "Zola - Technologies",
+    description: "Building a comprehensive AI platform to enable organizations to manage their project and meetings.",
+    technologies: ["React Native", "JavaScript", "NativeWind",'Django'],
     status: "In Progress",
-    progress: 75
+    progress: 60
   },
   {
-    icon: GraduationCap, 
-    title: "EdTech Platform",
-    company: "Abetec Hub",
-    description: "Developing an educational technology platform with Moodle integration for enhanced learning experiences.",
-    technologies: ["PHP", "MySQL", "Moodle"],
+    icon: Smartphone,
+    title: "KikundiPay Mobile App",
+    company: "Personal",
+    description: "Developing a Chama Group management app for local financial groups to manage their finances and general activities.",
+    technologies: ["React-Native", "MongoDB"],
     status: "In Progress", 
-    progress: 60
+    progress: 100
   },
   {
     icon: Code,

@@ -5,10 +5,20 @@ import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
+    title: "Backend Developer Intern",
+    company: "Zola - Technologies",
+    location: "Hybrid, Kenya", 
+    period: "April 2024 - Current",
+    type: "experience",
+    description: "Collaboration in building a student career support platform for the company. Technologies used are Docker,Django,Django DRF. I also demonstrate/present the project to Project Manager and my supervisor.",
+    technologies: ["Django", "Docker",'Django DRF'],
+    logo: "🏢"
+  },
+  {
     title: "Mobile App Development Intern",
     company: "Swap Space",
     location: "Remote, Dubai", 
-    period: "November 2024 - Current",
+    period: "November 2024 - March 2025",
     type: "experience",
     description: "Collaboration in building a real estate mobile app application for the company. Technologies used are React-Native, Javascript, Github, NativeWind. I also demonstrate/present the project to Project Manager and my supervisor.",
     technologies: ["React Native", "JavaScript", "GitHub", "NativeWind"],
@@ -33,16 +43,6 @@ const experiences = [
     description: "Collaboration in building an e-commerce application for the organisation. Technologies used are React, Javascript, NodeJS, ExpressJS, MongoDb, Github, Tailwindcss. I also demonstrate/present the project to Project Manager and my supervisor.",
     technologies: ["React", "JavaScript", "Node.js", "Express.js", "MongoDB", "GitHub", "Tailwind CSS"],
     logo: "💼"
-  },
-  {
-    title: "Web Developer",
-    company: "Wake and Shine SHG",
-    location: "Tharaka South, Tharaka-Nithi, Kenya",
-    period: "April 2023 - August 2023",
-    type: "experience",
-    description: "I built a complete website for the organisation. Technologies used are Github, Javascript, Tailwindcss, HTML. I also demonstrate/present the project to Project Manager.",
-    technologies: ["JavaScript", "Tailwind CSS", "HTML", "GitHub"],
-    logo: "🌅"
   },
   {
     title: "Bachelor of Science - Software Development",

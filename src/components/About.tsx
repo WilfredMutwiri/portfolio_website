@@ -6,7 +6,7 @@ import aboutBg from "@/assets/about-bg.jpg";
 const highlights = [
   {
     icon: Code,
-    title: "5+ Years Experience",
+    title: "3+ Years Experience",
     description: "Building modern web and mobile applications"
   },
   {
@@ -62,7 +62,7 @@ export function About() {
           >
             <div className="prose prose-lg dark:prose-invert">
               <p className="text-muted-foreground leading-relaxed">
-                I am a Full Stack Software Engineer with five years' experience building web 
+                I am a Full Stack Software Engineer with three years' experience building web 
                 applications and Mobile apps using modern technologies. I have strong problem-solving 
                 skills and effective collaboration with cross-functional teams, leading to delivering 
                 high-quality solutions meeting requirements.

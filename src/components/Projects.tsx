@@ -2,14 +2,22 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-
+import fuelmate from '@/assets/fuelmate.png';
 const projects = [
+    {
+    title: "Fuel - Mate Mobile App",
+    description: "A mobile app to enable motorists to order fuel in emergency critical situations to nearby fuel stations",
+    image:fuelmate,
+    technologies: ["React-Native", "Express", "Native-Wind", "MongoDB", "AfricasTalking API"],
+    demoUrl: "https://drive.google.com/file/d/1lcA3n3JiVnJmLbVmkhbtRe0AFwmhYSTy/view?usp=sharing",
+    skills: ["Problem Solving", "Creative reasoning"]
+  },
   {
-    title: "Savannah e-Commerce",
-    description: "E-Commerce web platform for Vabrise Technologies with modern UI and seamless shopping experience.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+    title: "Savannah E-Commerce",
+    description: "Niasale E-Commerce web platform for Vabrise Technologies with modern UI and seamless shopping experience.",
+    image: "https://niasale.vercel.app/images/logo.jpg",
     technologies: ["React", "Django", "JavaScript", "Tailwind CSS", "Git/GitHub"],
-    demoUrl: "https://shop.vabrisetech.com/",
+    demoUrl: "https://niasale.vercel.app/",
     skills: ["Problem Solving", "Team work", "Collaboration"]
   },
   {
@@ -21,17 +29,9 @@ const projects = [
     skills: ["Problem Solving", "Communication", "Critical Reasoning"]
   },
   {
-    title: "Destinykers Bookstore",
-    description: "A bookstore website with the best books collection, allowing users to download books in PDF format.",
-    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=600&fit=crop",
-    technologies: ["React", "JavaScript", "Tailwind CSS", "Flowbite", "Git/GitHub"],
-    demoUrl: "https://destinykers-bookstore.vercel.app/",
-    skills: ["Problem Solving", "Creative reasoning"]
-  },
-  {
     title: "BeachLife Fitness (Diani)",
     description: "Complete website for the Kenya Beachlife Fitness Gym in Diani with modern design and functionality.",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
+    image: "https://beach-life-fitness.vercel.app/assets/logo-520698693-D8notr87.webp",
     technologies: ["JavaScript", "Tailwind CSS", "HTML", "Git/GitHub"],
     demoUrl: "https://beach-life-fitness.vercel.app/",
     skills: ["Problem Solving", "Communication", "Critical Reasoning"]
@@ -39,25 +39,17 @@ const projects = [
   {
     title: "Jabana School Management",
     description: "A comprehensive school communication management system for modern educational institutions.",
-    image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800&h=600&fit=crop",
+    image: "https://jabana.vercel.app/assets/logo-DOzTNi7l.webp",
     technologies: ["React", "Tailwind CSS", "Flowbite", "Node.js", "MongoDB", "Git/GitHub"],
     demoUrl: "http://jabana.vercel.app/",
     skills: ["Problem Solving", "Communication", "Critical Reasoning"]
   },
   {
-    title: "Wake and Shine SHG",
-    description: "Complete website for Wake and Shine Self Help Group with modern interface and features.",
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop",
-    technologies: ["JavaScript", "Tailwind CSS", "HTML", "Git/GitHub"],
-    demoUrl: "https://wakeandshineshg.netlify.app/",
-    skills: ["Problem Solving", "Communication", "Critical Reasoning"]
-  },
-  {
     title: "Tuongee Initiative",
     description: "Complete full-stack website for Tuongee Initiative group with backend integration.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+    image: "https://tuongee.co.ke/assets/logo-BX73BsZs.webp",
     technologies: ["React", "MongoDB", "Express.js", "Node.js", "JavaScript", "Tailwind CSS", "Git/GitHub"],
-    demoUrl: "https://tuongee.vercel.app/",
+    demoUrl: "https://tuongee.co.ke/",
     skills: ["Problem Solving", "Communication", "Critical Reasoning"]
   }
 ];

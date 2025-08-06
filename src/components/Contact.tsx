@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Facebook } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Twitter,
+  Facebook,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -11,14 +19,14 @@ const contactInfo = [
     icon: Mail,
     title: "Email",
     value: "wilfredmutwiri20@gmail.com",
-    href: "mailto:wilfredmutwiri20@gmail.com"
+    href: "mailto:wilfredmutwiri20@gmail.com",
   },
   {
     icon: MapPin,
-    title: "Location", 
-    value: "Kenya",
-    href: null
-  }
+    title: "Location",
+    value: "Nairobi - Kenya",
+    href: null,
+  },
 ];
 
 const socialLinks = [
@@ -26,26 +34,26 @@ const socialLinks = [
     icon: Github,
     label: "GitHub",
     href: "https://github.com/WilfredMutwiri",
-    color: "hover:text-gray-900 dark:hover:text-gray-100"
+    color: "hover:text-gray-900 dark:hover:text-gray-100",
   },
   {
     icon: Linkedin,
-    label: "LinkedIn", 
+    label: "LinkedIn",
     href: "https://www.linkedin.com/in/wilfred-mutwiri-ba3bb8236/",
-    color: "hover:text-blue-600"
+    color: "hover:text-blue-600",
   },
   {
     icon: Twitter,
     label: "Twitter",
-    href: "https://twitter.com/WilfredMutwiri8", 
-    color: "hover:text-blue-400"
+    href: "https://twitter.com/WilfredMutwiri8",
+    color: "hover:text-blue-400",
   },
   {
     icon: Facebook,
     label: "Facebook",
     href: "https://www.facebook.com/willy.james.33821",
-    color: "hover:text-blue-500"
-  }
+    color: "hover:text-blue-500",
+  },
 ];
 
 export function Contact() {
@@ -83,11 +91,13 @@ export function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Let's work together</h3>
+              <h3 className="text-2xl font-semibold mb-6">
+                Let's work together
+              </h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                I'm always interested in new opportunities and exciting projects. 
-                Whether you have a question, want to discuss a project, or just want 
-                to say hello, I'd love to hear from you.
+                I'm always interested in new opportunities and exciting
+                projects. Whether you have a question, want to discuss a
+                project, or just want to say hello, I'd love to hear from you.
               </p>
             </div>
 
@@ -103,7 +113,7 @@ export function Contact() {
                       <div>
                         <p className="font-medium">{info.title}</p>
                         {info.href ? (
-                          <a 
+                          <a
                             href={info.href}
                             className="text-muted-foreground hover:text-primary transition-colors"
                           >
@@ -153,57 +163,63 @@ export function Contact() {
                 <CardTitle>Send me a message</CardTitle>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  action="https://formspree.io/f/xblkzbqv"
+                  method="POST"
+                  className="space-y-6"
+                >
+                  {" "}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name</Label>
-                      <Input 
-                        id="firstName" 
-                        placeholder="John"
+                      <Input
+                        id="firstName"
+                        name="firstName"
+                        placeholder="Enter Your First Name"
                         className="focus:ring-primary focus:border-primary"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name</Label>
-                      <Input 
-                        id="lastName" 
-                        placeholder="Doe"
+                      <Input
+                        id="lastName"
+                        name="lastName"
+                        placeholder="Enter Your Last Name"
                         className="focus:ring-primary focus:border-primary"
                       />
                     </div>
                   </div>
-
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      placeholder="john.doe@example.com"
+                    <Input
+                      id="email"
+                      type="email"
+                      name="email"
+                      placeholder="Enter your Email Address"
                       className="focus:ring-primary focus:border-primary"
                     />
                   </div>
-
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
-                    <Input 
-                      id="subject" 
+                    <Input
+                      id="subject"
+                      name="subject"
                       placeholder="Project Discussion"
                       className="focus:ring-primary focus:border-primary"
                     />
                   </div>
-
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
-                    <Textarea 
-                      id="message" 
+                    <Textarea
+                      id="message"
+                      name="message"
                       placeholder="Tell me about your project..."
                       rows={5}
                       className="focus:ring-primary focus:border-primary resize-none"
                     />
                   </div>
-
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full bg-gradient-primary text-primary-foreground hover-glow"
                     size="lg"
                   >

@@ -39,7 +39,7 @@ export function Header() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold gradient-text"
+          className="text-2xl font-bold "
         >
           WM
         </motion.div>
@@ -51,7 +51,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               whileHover={{ y: -2 }}
-              className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
+              className=" hover:text-primary transition-colors duration-300 font-medium"
             >
               {item.label}
             </motion.a>

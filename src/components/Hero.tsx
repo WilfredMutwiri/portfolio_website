@@ -50,6 +50,8 @@ export function Hero() {
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="absolute inset-0 bg-gradient-hero" />
+        {/* Black overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       {/* Floating Elements */}
@@ -90,7 +92,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Hi, I'm{" "}
-            <span className="gradient-text">Wilfred Mutwiri</span>
+            <span className="text-purple-500">Wilfred Mutwiri</span>
           </motion.h1>
 
           <motion.div
@@ -99,16 +101,16 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <span className="typewriter-cursor">{displayText}</span>
+            <span className="typewriter-cursor text-purple-300">{displayText}</span>
           </motion.div>
 
           <motion.p
-            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Full Stack Software Engineer with 5+ years of experience building web applications 
+            Full Stack Software Engineer with 3+ years of experience building web applications 
             and mobile apps using modern technologies. Passionate about creating innovative 
             solutions that make a difference.
           </motion.p>
