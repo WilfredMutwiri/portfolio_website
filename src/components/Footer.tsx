@@ -44,12 +44,6 @@ export function Footer() {
               Software Developer passionate about creating innovative solutions 
               that make a difference in the world.
             </p>
-
-            <div className="flex items-center justify-center text-sm text-muted-foreground">
-              <span>Made with</span>
-              <Heart className="h-4 w-4 mx-1 text-red-500 animate-pulse" />
-              <span>by Wilfred Mutwiri</span>
-            </div>
           </motion.div>
 
           {/* Bottom Section */}
