@@ -3,7 +3,16 @@ import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import fuelmate from '@/assets/fuelmate.png';
+import debsploit from '@/assets/debsploit.png';
 const projects = [
+  {
+    title: "Debsploit Solutions Platform",
+    description: "A web platfrom for debploit solutions company.",
+    image:debsploit,
+    technologies: ["React", "Django","Tailwind -CSS","Postgress"],
+    demoUrl: "https://debsploitsolutions.com/",
+    skills: ["Problem Solving", "Creative reasoning","UI/UX"]
+  },
     {
     title: "Fuel - Mate Mobile App",
     description: "A mobile app to enable motorists to order fuel in emergency critical situations to nearby fuel stations",
