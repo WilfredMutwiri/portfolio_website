@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import fuelmate from '@/assets/fuelmate.png';
 import debsploit from '@/assets/debsploit.png';
+import wakeandshine from "@/assets/wakeandshine.png";
+
 const projects = [
   {
     title: "Debsploit Solutions Platform",
@@ -59,6 +61,14 @@ const projects = [
     image: "https://tuongee.co.ke/assets/logo-BX73BsZs.webp",
     technologies: ["React", "MongoDB", "Express.js", "Node.js", "JavaScript", "Tailwind CSS", "Git/GitHub"],
     demoUrl: "https://tuongee.co.ke/",
+    skills: ["Problem Solving", "Communication", "Critical Reasoning"]
+  },
+    {
+    title: "Wake and Shine SHG",
+    description: "Complete full-stack website for Wake and Shine Self help group with backend integration.",
+    image:wakeandshine,
+    technologies: ["React", "MongoDB", "Express.js", "Node.js", "JavaScript", "Tailwind CSS", "Git/GitHub"],
+    demoUrl: "https://wake-and-shine-new.vercel.app/",
     skills: ["Problem Solving", "Communication", "Critical Reasoning"]
   }
 ];
