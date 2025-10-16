@@ -5,8 +5,17 @@ import { Badge } from "@/components/ui/badge";
 import fuelmate from '@/assets/fuelmate.png';
 import debsploit from '@/assets/debsploit.png';
 import wakeandshine from "@/assets/wakeandshine.png";
+import squidlight from "@/assets/squidlight.png";
 
 const projects = [
+   {
+    title: "SquidLight Solar Africa",
+    description: "A web platform for SquidLight Solar Africa company.",
+    image:squidlight,
+    technologies: ["React","Tailwind -CSS"],
+    demoUrl: "https://squidlight.vercel.app/",
+    skills: ["Problem Solving", "Creative reasoning","UI/UX"]
+  },
   {
     title: "Debsploit Solutions Platform",
     description: "A web platfrom for debploit solutions company.",
@@ -44,7 +53,7 @@ const projects = [
     description: "Complete website for the Kenya Beachlife Fitness Gym in Diani with modern design and functionality.",
     image: "https://beach-life-fitness.vercel.app/assets/logo-520698693-D8notr87.webp",
     technologies: ["JavaScript", "Tailwind CSS", "HTML", "Git/GitHub"],
-    demoUrl: "https://beach-life-fitness.vercel.app/",
+    demoUrl: "https://beachlifefitness.co.ke/",
     skills: ["Problem Solving", "Communication", "Critical Reasoning"]
   },
   {
@@ -68,7 +77,7 @@ const projects = [
     description: "Complete full-stack website for Wake and Shine Self help group with backend integration.",
     image:wakeandshine,
     technologies: ["React", "MongoDB", "Express.js", "Node.js", "JavaScript", "Tailwind CSS", "Git/GitHub"],
-    demoUrl: "https://wake-and-shine-new.vercel.app/",
+    demoUrl: "https://wakeandshine.vercel.app/",
     skills: ["Problem Solving", "Communication", "Critical Reasoning"]
   }
 ];

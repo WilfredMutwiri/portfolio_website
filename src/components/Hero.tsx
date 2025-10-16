@@ -110,7 +110,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Full Stack Software Engineer with 3+ years of experience building web applications 
+            Full Stack Software Engineer with vast experience in building web applications 
             and mobile apps using modern technologies. Passionate about creating innovative 
             solutions that make a difference.
           </motion.p>
