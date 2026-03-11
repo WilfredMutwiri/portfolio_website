@@ -1,160 +1,95 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
-
-const roles = [
-  "Software Developer",
-  "Full Stack Engineer", 
-  "Tech Explorer",
-  "Mobile App Developer"
-];
+import profileImage from "@/assets/logo.jpg";
 
 export function Hero() {
-  const [currentRole, setCurrentRole] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isTyping, setIsTyping] = useState(true);
-
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    
-    if (isTyping) {
-      const targetText = roles[currentRole];
-      if (displayText.length < targetText.length) {
-        timeout = setTimeout(() => {
-          setDisplayText(targetText.slice(0, displayText.length + 1));
-        }, 100);
-      } else {
-        timeout = setTimeout(() => setIsTyping(false), 2000);
-      }
-    } else {
-      if (displayText.length > 0) {
-        timeout = setTimeout(() => {
-          setDisplayText(displayText.slice(0, -1));
-        }, 50);
-      } else {
-        setCurrentRole((prev) => (prev + 1) % roles.length);
-        setIsTyping(true);
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayText, isTyping, currentRole]);
-
   return (
-    <section id="home" className="min-h-screen relative flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-hero" />
-        {/* Black overlay for better text contrast */}
-        <div className="absolute inset-0 bg-black/30" />
+    <section id="home" className="relative pt-28 sm:pt-32 min-h-[90vh] flex items-center overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src={profileImage}
+          alt="Wilfred Mutwiri background portrait"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/75 to-background/88" />
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-primary/20 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [-20, 20],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Content */}
-      <div className="container mx-auto px-4 relative z-10 text-center">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-6"
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-4xl"
         >
-          <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Hi, I'm{" "}
-            <span className="text-purple-500">Wilfred Mutwiri</span>
-          </motion.h1>
-
-          <motion.div
-            className="text-xl md:text-2xl text-muted-foreground h-8 flex items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <span className="typewriter-cursor text-purple-300">{displayText}</span>
-          </motion.div>
-
-          <motion.p
-            className="text-lg md:text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            Full Stack Software Engineer with vast experience in building web applications 
-            and mobile apps using modern technologies. Passionate about creating innovative 
-            solutions that make a difference.
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <Button 
-              size="lg"
-              className="bg-gradient-primary text-primary-foreground hover-glow px-8 py-3 text-lg font-medium"
-              asChild
+          <div className="rounded-2xl border border-border/80 bg-background/78 backdrop-blur-sm p-6 sm:p-8 md:p-10 text-center shadow-card">
+            <motion.p
+              className="text-sm font-semibold uppercase tracking-[0.18em] text-primary"
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
             >
-              <a href="#projects">View My Work</a>
-            </Button>
-            
-            <div className="flex items-center space-x-4">
-              <Button variant="outline" size="icon" className="hover-glow" asChild>
-                <a href="https://github.com/WilfredMutwiri" target="_blank" rel="noopener noreferrer">
+              Full Stack Software Engineer
+            </motion.p>
+
+            <motion.p
+              className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight text-foreground"
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              I build reliable web and mobile products for startups and growing teams.
+            </motion.p>
+
+            <motion.p
+              className="mt-5 mx-auto max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed"
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              Nairobi-based developer focused on React, Django, and React Native. I ship clean,
+              maintainable solutions that support business outcomes.
+            </motion.p>
+
+            <motion.div
+              className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Button size="lg" className="w-full sm:w-auto" asChild>
+                <a href="#projects">View My Work</a>
+              </Button>
+
+              <Button variant="outline" size="lg" className="w-full sm:w-auto bg-background/70" asChild>
+                <a href="#contact">Contact Me</a>
+              </Button>
+            </motion.div>
+
+            <motion.div
+              className="mt-5 flex items-center justify-center gap-3"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <Button variant="outline" size="icon" className="bg-background/70" asChild>
+                <a href="https://github.com/WilfredMutwiri" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <Github className="h-5 w-5" />
                 </a>
               </Button>
-              <Button variant="outline" size="icon" className="hover-glow" asChild>
-                <a href="https://www.linkedin.com/in/wilfred-mutwiri-ba3bb8236/" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="icon" className="bg-background/70" asChild>
+                <a href="https://www.linkedin.com/in/wilfred-mutwiri-ba3bb8236/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
-              <Button variant="outline" size="icon" className="hover-glow" asChild>
-                <a href="mailto:wilfredmutwiri20@gmail.com">
+              <Button variant="outline" size="icon" className="bg-background/70" asChild>
+                <a href="mailto:wilfredmutwiri20@gmail.com" aria-label="Email">
                   <Mail className="h-5 w-5" />
                 </a>
               </Button>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <ChevronDown className="h-8 w-8 text-muted-foreground" />
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

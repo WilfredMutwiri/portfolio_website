@@ -1,64 +1,64 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Building2, GraduationCap } from "lucide-react";
+import { Building2, Calendar, GraduationCap, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
     title: "Backend Developer Intern",
-    company: "Zola - Technologies",
-    location: "Hybrid, Kenya", 
-    period: "April 2024 - Current",
+    company: "Zola Technologies",
+    location: "Hybrid, Kenya",
+    period: "Apr 2024 - Present",
     type: "experience",
-    description: "Collaboration in building a student career support platform for the company. Technologies used are Docker,Django,Django DRF. I also demonstrate/present the project to Project Manager and my supervisor.",
-    technologies: ["Django", "Docker",'Django DRF'],
-    logo: "🏢"
+    description:
+      "Contributing to a student career support platform with Django, DRF, and Docker while supporting demos and technical reviews.",
+    technologies: ["Django", "Django REST Framework", "Docker"],
   },
   {
     title: "Mobile App Development Intern",
     company: "Swap Space",
-    location: "Remote, Dubai", 
-    period: "November 2024 - March 2025",
+    location: "Remote, Dubai",
+    period: "Nov 2024 - Mar 2025",
     type: "experience",
-    description: "Collaboration in building a real estate mobile app application for the company. Technologies used are React-Native, Javascript, Github, NativeWind. I also demonstrate/present the project to Project Manager and my supervisor.",
-    technologies: ["React Native", "JavaScript", "GitHub", "NativeWind"],
-    logo: "🏢"
+    description:
+      "Built product features for a real estate mobile app and collaborated with the team on iterative releases.",
+    technologies: ["React Native", "JavaScript", "NativeWind", "GitHub"],
   },
   {
     title: "Backend Development Intern",
     company: "Abetec Hub",
     location: "Remote, Kenya",
-    period: "November 2024 - January 2025", 
+    period: "Nov 2024 - Jan 2025",
     type: "experience",
-    description: "Collaboration in building an Ed-Tech platform for the abetec hub with moodle integration. Technologies used are MySQL, Moodle, PhP. I also demonstrate/present the project to Project Manager and my supervisor.",
+    description:
+      "Supported backend development for an EdTech platform including Moodle integration and data workflows.",
     technologies: ["MySQL", "Moodle", "PHP"],
-    logo: "🎓"
   },
   {
     title: "Web Development Intern",
     company: "Vabrise Technologies",
     location: "Remote, Kenya",
-    period: "July 2024 - November 2024",
-    type: "experience", 
-    description: "Collaboration in building an e-commerce application for the organisation. Technologies used are React, Javascript, NodeJS, ExpressJS, MongoDb, Github, Tailwindcss. I also demonstrate/present the project to Project Manager and my supervisor.",
-    technologies: ["React", "JavaScript", "Node.js", "Express.js", "MongoDB", "GitHub", "Tailwind CSS"],
-    logo: "💼"
+    period: "Jul 2024 - Nov 2024",
+    type: "experience",
+    description:
+      "Delivered features for an e-commerce platform across frontend and backend services.",
+    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
   },
   {
-    title: "Bachelor of Science - Software Development",
+    title: "BSc. Software Development",
     company: "University of Eastern Africa, Baraton",
-    location: "Baraton, Nandi County, Kenya", 
-    period: "August 2021 - August 2025",
+    location: "Nandi County, Kenya",
+    period: "Aug 2021 - Aug 2025",
     type: "education",
-    description: "Software Engineering | Data Structure and Algorithms | Web Design | Web Development | Mobile Programming | Artificial Intelligence | ICT Project Management | Cloud Computing | Object Oriented Programming | Database Management | Installation and Customization | Awaiting Graduation on August 2025",
-    technologies: ["Software Engineering", "Data Structures", "Web Development", "Mobile Programming", "AI", "Cloud Computing"],
-    logo: "🎓"
-  }
+    description:
+      "Coursework covered software engineering, data structures, web and mobile development, cloud computing, and AI fundamentals.",
+    technologies: ["Software Engineering", "Data Structures", "Web Development", "Mobile Development"],
+  },
 ];
 
 export function Experience() {
   return (
-    <section id="experience" className="py-20 bg-muted/50">
+    <section id="experience" className="py-20 sm:py-24 bg-muted/40">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -67,90 +67,65 @@ export function Experience() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Experience & <span className="gradient-text">Education</span>
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience and Education</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            My professional journey and educational background
+            Professional roles and academic background relevant to software delivery.
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-primary"></div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {experiences.map((item, index) => (
+            <motion.div
+              key={`${item.company}-${item.period}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.06 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full shadow-card">
+                <CardHeader className="space-y-3">
+                  <div className="flex items-center justify-between gap-2">
+                    <Badge variant={item.type === "education" ? "secondary" : "default"}>
+                      {item.type === "education" ? (
+                        <GraduationCap className="w-3.5 h-3.5 mr-1" />
+                      ) : (
+                        <Building2 className="w-3.5 h-3.5 mr-1" />
+                      )}
+                      {item.type === "education" ? "Education" : "Experience"}
+                    </Badge>
+                  </div>
 
-          <div className="space-y-8">
-            {experiences.map((item, index) => (
-              <motion.div
-                key={`${item.company}-${item.period}`}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } flex-col md:flex-row`}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-10">
-                  <div className="w-full h-full bg-primary rounded-full animate-pulse"></div>
-                </div>
+                  <div>
+                    <h3 className="text-lg font-semibold leading-tight">{item.title}</h3>
+                    <p className="text-sm text-primary font-medium mt-1">{item.company}</p>
+                  </div>
 
-                {/* Content */}
-                <div className={`w-full md:w-5/12 ml-12 md:ml-0 ${
-                  index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
-                }`}>
-                  <Card className="hover-glow">
-                    <CardHeader className="pb-4">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-2xl">{item.logo}</span>
-                        <Badge variant={item.type === 'education' ? 'secondary' : 'default'}>
-                          {item.type === 'education' ? <GraduationCap className="w-3 h-3 mr-1" /> : <Building2 className="w-3 h-3 mr-1" />}
-                          {item.type === 'education' ? 'Education' : 'Experience'}
-                        </Badge>
-                      </div>
-                      
-                      <h3 className="text-xl font-semibold">{item.title}</h3>
-                      <p className="text-primary font-medium">{item.company}</p>
-                      
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {item.period}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          {item.location}
-                        </div>
-                      </div>
-                    </CardHeader>
+                  <div className="flex flex-col gap-1 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>{item.period}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4" />
+                      <span>{item.location}</span>
+                    </div>
+                  </div>
+                </CardHeader>
 
-                    <CardContent className="space-y-4">
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {item.description}
-                      </p>
+                <CardContent className="space-y-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
 
-                      <div className="space-y-2">
-                        <p className="text-xs font-medium text-muted-foreground">
-                          {item.type === 'education' ? 'Subjects:' : 'Technologies:'}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {item.technologies.map((tech) => (
-                            <Badge key={tech} variant="outline" className="text-xs">
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                {/* Spacer for the other side */}
-                <div className="hidden md:block w-5/12"></div>
-              </motion.div>
-            ))}
-          </div>
+                  <div className="flex flex-wrap gap-2">
+                    {item.technologies.map((tech) => (
+                      <Badge key={tech} variant="outline" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

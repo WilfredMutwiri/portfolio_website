@@ -1,50 +1,29 @@
 import { motion } from "framer-motion";
+import { Code2, Database, Server, Wrench } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const skillCategories = [
   {
     title: "Frontend",
-    icon: "🎨",
-    skills: [
-      { name: "JavaScript", level: 95 },
-      { name: "React", level: 90 },
-      { name: "HTML/CSS", level: 95 },
-      { name: "Tailwind CSS", level: 90 },
-      { name: "React Native", level: 85 }
-    ]
+    icon: Code2,
+    skills: ["React", "TypeScript", "JavaScript", "Tailwind CSS", "React Native"],
   },
   {
-    title: "Backend", 
-    icon: "⚙️",
-    skills: [
-      { name: "Python", level: 85 },
-      { name: "Django", level: 80 },
-      { name: "Node.js", level: 85 },
-      { name: "Express.js", level: 80 },
-      { name: "Flask", level: 75 }
-    ]
+    title: "Backend",
+    icon: Server,
+    skills: ["Python", "Django", "Django REST Framework", "Node.js", "Express.js"],
   },
   {
     title: "Database",
-    icon: "🗄️", 
-    skills: [
-      { name: "MongoDB", level: 85 },
-      { name: "MySQL", level: 80 },
-      { name: "PostgreSQL", level: 75 }
-    ]
+    icon: Database,
+    skills: ["PostgreSQL", "MySQL", "MongoDB"],
   },
   {
     title: "Tools & Others",
-    icon: "🛠️",
-    skills: [
-      { name: "Git/GitHub", level: 90 },
-      { name: "PHP", level: 70 },
-      { name: "SCSS", level: 85 },
-      { name: "Flowbite", level: 80 },
-      { name: "NativeWind", level: 80 }
-    ]
-  }
+    icon: Wrench,
+    skills: ["Git / GitHub", "Docker", "REST APIs", "Cloud Fundamentals", "CI/CD"],
+  },
 ];
 
 export function Skills() {
@@ -58,11 +37,9 @@ export function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            My <span className="gradient-text">Skills</span>
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life
+            Core technologies I use to build and maintain production-ready software.
           </p>
         </motion.div>
 
@@ -75,15 +52,17 @@ export function Skills() {
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="hover-glow h-full">
-                <CardHeader className="text-center pb-4">
-                  <div className="text-4xl mb-2">{category.icon}</div>
-                  <CardTitle className="text-xl">{category.title}</CardTitle>
+              <Card className="h-full shadow-card">
+                <CardHeader className="pb-4 space-y-3">
+                  <div className="w-11 h-11 rounded-lg bg-secondary flex items-center justify-center">
+                    <category.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">{category.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
                     <motion.div
-                      key={skill.name}
+                      key={skill}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ 
@@ -91,27 +70,11 @@ export function Skills() {
                         delay: categoryIndex * 0.1 + skillIndex * 0.05 
                       }}
                       viewport={{ once: true }}
-                      className="space-y-2"
+                      className="inline-flex"
                     >
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <Badge variant="secondary" className="text-xs">
-                          {skill.level}%
-                        </Badge>
-                      </div>
-                      <div className="w-full bg-muted rounded-full h-2">
-                        <motion.div
-                          className="bg-gradient-primary h-2 rounded-full"
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          transition={{ 
-                            duration: 1.5, 
-                            delay: categoryIndex * 0.1 + skillIndex * 0.1,
-                            ease: "easeOut"
-                          }}
-                          viewport={{ once: true }}
-                        />
-                      </div>
+                      <Badge variant="secondary" className="font-medium">
+                        {skill}
+                      </Badge>
                     </motion.div>
                   ))}
                 </CardContent>
@@ -128,10 +91,10 @@ export function Skills() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <h3 className="text-xl font-semibold mb-6">Also Working With</h3>
+          <h3 className="text-xl font-semibold mb-6">Additional Exposure</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {["TypeScript", "Next.js", "Docker", "AWS", "Firebase", "Vercel", "Netlify", "REST APIs",].map((tech) => (
-              <Badge key={tech} variant="outline" className="px-4 py-2 text-sm hover:bg-primary hover:text-primary-foreground transition-colors">
+            {["Next.js", "Flask", "Moodle", "PHP", "NativeWind", "Vercel", "Netlify", "Figma"].map((tech) => (
+              <Badge key={tech} variant="outline" className="px-4 py-2 text-sm">
                 {tech}
               </Badge>
             ))}
