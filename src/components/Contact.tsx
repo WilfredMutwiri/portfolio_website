@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin,Phone} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { title } from "process";
 
 const contactInfo = [
   {
@@ -19,6 +20,13 @@ const contactInfo = [
     value: "Nairobi, Kenya",
     href: null,
   },
+  // phone
+  {
+    icon:Phone,
+    title:"Phone",
+    value:"+254 745 567 568",
+    href:"tel:+254745567568"
+  }
 ];
 
 const socialLinks = [

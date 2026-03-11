@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profileImage from "@/assets/logo.jpg";
+import profileImage from "@/assets/hero-bg.jpg";
 
 export function Hero() {
   return (
@@ -48,7 +48,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Nairobi-based developer focused on React, Django, and React Native. I ship clean,
+              Software developer focused on React, Django, and React Native. I ship clean,
               maintainable solutions that support business outcomes.
             </motion.p>
 

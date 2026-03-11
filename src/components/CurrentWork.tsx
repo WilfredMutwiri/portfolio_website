@@ -6,10 +6,10 @@ import { Badge } from "@/components/ui/badge";
 const currentProjects = [
   {
     icon: Smartphone,
-    title: "Build-Note AI",
-    company: "Zola Technologies",
-    description: "Building a cross-platform product for structured project and meeting documentation.",
-    technologies: ["React Native", "JavaScript", "NativeWind", "Django"],
+    title: "Fithub Gym Management SaaS",
+    company: "Personal Project",
+    description: "Building a gym management SaaS with member management, scheduling, subscription features, and AI-powered insights.",
+    technologies: ["React", "JavaScript", "Open-AI Integrations", "Django"],
     status: "Active",
   },
   {

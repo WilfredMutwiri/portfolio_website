@@ -5,10 +5,19 @@ import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
+    title: "Software Engineer Intern",
+    company: "Tekkstudio",
+    location: "Remote, USA",
+    period:"Jan 2026 - Present",
+    type:"Experience",
+    description:"Contributed to the development of an AI-powered  web crawler to manage businesses websites and online presence.",
+    technologies:["Python", "Django", "AI Integration", "Web Crawling", "AWS"],
+  },
+  {
     title: "Backend Developer Intern",
     company: "Zola Technologies",
     location: "Hybrid, Kenya",
-    period: "Apr 2024 - Present",
+    period: "Apr 2025 - Dec 2025",
     type: "experience",
     description:
       "Contributing to a student career support platform with Django, DRF, and Docker while supporting demos and technical reviews.",
