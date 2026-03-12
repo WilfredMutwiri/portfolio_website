@@ -8,6 +8,7 @@ import wakeandshine from "@/assets/wakeandshine.png";
 import squidlight from "@/assets/squidlight.png";
 import fithub from "@/assets/fithub.png";
 import Kamuganka from "@/assets/Kamuganka.png";
+import beachlife from "@/assets/beachlife.png";
 
 const projects = [
   {
@@ -33,6 +34,14 @@ const projects = [
     technologies: ["React", "Django", "Tailwind CSS", "PostgreSQL"],
     demoUrl: "https://debsploitsolutions.com/",
     skills: ["Product Development", "Backend Integration", "UX"],
+  },
+  {
+    title: "Beach Life Fitness Gym Website",
+    description: "Website for Beach Life Fitness Gym showcasing services and classes.",
+    image: beachlife,
+    technologies: ["React", "Tailwind CSS"],
+    demoUrl: "https://beachlifefitness.co.ke/",
+    skills: ["UI Design", "Responsive Layout", "Client Engagement"],
   },
   {
     title: "Fuel Mate Mobile App",
